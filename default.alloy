@@ -1,0 +1,7 @@
+  loki.source.podlogs "default" {
+    forward_to = [loki.write.grafanacloud.receiver]
+  }
+
+  prometheus.operator.podmonitors "pods" {
+    forward_to = [prometheus.remote_write.grafanacloud.receiver]
+  }
